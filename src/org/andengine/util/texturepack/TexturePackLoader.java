@@ -58,7 +58,7 @@ public class TexturePackLoader {
 
 	public TexturePack loadFromAsset(final String pAssetPath, final String pAssetBasePath) throws TexturePackParseException {
 		try {
-			return this.load(this.mAssetManager.open(pAssetPath), pAssetBasePath);
+			return this.load(this.mAssetManager.open(pAssetBasePath + pAssetPath), pAssetBasePath);
 		} catch (final IOException e) {
 			throw new TexturePackParseException("Could not load " + this.getClass().getSimpleName() + " data from asset: " + pAssetPath, e);
 		}
